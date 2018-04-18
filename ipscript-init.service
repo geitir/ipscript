@@ -1,0 +1,12 @@
+#KYC2018
+
+[Unit]
+Description=service to launch ipscript-init.sh on boot after network is available
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /home/pi/scripts/ipscript/ipscript-init.sh
+
+[Install]
+WantedBy=multi-user.target
